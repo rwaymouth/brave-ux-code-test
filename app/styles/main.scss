@@ -8,23 +8,28 @@ $app-bg: #EBEEF0;
 $menu-bg: #662D91;
 $header-bg: #93278F;
 $header-title-color: #F9F9F9; 
+$text-color: #616A75; 
+$input-text: #778F9B;
+$error: #ED1C24;
+
+// Effects
+$menu-shadow: -0.1em 0.1em 0.1em rgba(black, 0.3);
 
 // Spacing Variables
 $padding: 1.5625em;
 $menu-height: 3.125em;
 
-@mixin clearfix {
-    &:after {
-        content:"";
-        display:table;
-        clear:both;
-    }
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
 
 body {
     background-color: $body-bg;
     font-family: $primary-font;
     font-size: 16px;
+    color: $text-color;
     margin: 0;
     padding: 0;
 }
@@ -36,7 +41,7 @@ header {
     left: 0;
     width: 100%;
     height: $menu-height;
-    padding: 0 $padding; 
+    padding-left: $padding; 
     color: $header-title-color;
     display: table;
 
@@ -62,10 +67,11 @@ footer {
     width: 31.25%;
     position: relative;
     padding: 0 $padding;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-out;
 
     &.active {
         width: 50%;
+        box-shadow: $menu-shadow;
     }
 }
 
@@ -73,10 +79,11 @@ footer {
     position: absolute;
     width: 1em;
     height: 1em;
+    cursor: pointer;
     background: orange;
     top: 0;
     bottom: 0;
-    right: 2 * $padding;
+    right: $padding/2;
     margin: auto;
 }
 
@@ -88,10 +95,12 @@ footer {
    background-color: $menu-bg;
    padding-left: 0;
    transform: translateX(100%);
-   transition: 0.7s ease-in-out;
+   transition: 0.7s ease-out;
 
    .active & {
        transform: none;
+       box-shadow: $menu-shadow;
+       transition: 0.35s ease-in;
    }
 }
 
@@ -118,5 +127,96 @@ footer {
 .braveux--app {
     margin-top: $menu-height;
     background-color: $app-bg;
-    padding: $padding;
+    padding: $padding $padding $menu-height $padding;
+}
+
+input[type="text"],
+input[type="password"] {
+    outline: none;
+    border: none;
+    background: none;
+    width: auto;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
+.eye--icon {
+    width: 1.5em;
+    cursor: pointer;
+}
+
+.app--input-group {
+    background-color: white;
+    border-radius: 0.175em;
+    padding: $padding/3 $padding/2;
+    display: table;
+    width: 100%;
+
+    &.error {
+        border: 0.125em solid $error;
+    }
+    
+    label {
+        width: 3.375em;
+        color: $input-text;
+    }
+   
+    input {
+        min-width: 80%;
+    } 
+    
+    > * {
+        display: table-cell;
+    }
+
+    > * + * {
+        margin-left: $padding;
+    }
+
+    & + & {
+        margin-top: $padding/2;
+    }
+}
+
+
+.app--row {
+    display: table;
+    width: 100%;
+
+    > * {
+        display: table-cell;
+    }
+}
+
+.brave-ux--button {
+    background-color: $menu-bg;
+    border: none;
+    padding: $padding/2 2*$padding;
+    color: $header-title-color;
+    margin-top: $padding;
+    font-size: 1em;
+    border-radius: 0.175em;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: lighten($menu-bg, 15%);
+    }
+}
+
+.brave-ux--help {
+    text-align: right;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+    
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: underline;
+        color: darken($text-color, 12.5%);
+    }
 }
