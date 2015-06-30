@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BraveUX</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+  </head>
+  <body>
+
+      <main class="braveux--app">
+      <header>      
+          <h1 class="nav--title">The Brave UX App</h1>
+          <nav class="app--nav">
+            <span class="nav--label">
+                Menu
+            </span>
+            <input class="nav--toggle" type="checkbox">
+            <ul class="nav--main">
+                <li class="nav--entry">
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="nav--entry">
+                    <a href="#">My Profile</a>
+                </li>
+                <li class="nav--entry">
+                    <a href="#">Settings</a>
+                </li>
+                <li class="nav--entry nav--entry__group">
+                    <a href="#">Help</a>
+                </li>
+                <li class="nav--entry nav--entry__group">
+                    <a href="#">About</a>
+                </li>
+                <li class="nav--entry">
+                    <a href="#">Login</a>
+                </li>
+            </ul>
+          </nav>
+      </header>  
+        <div class="app--modal hidden">
+            <p class="modal--message">
+            <p>
+        </div>
+        
+        <div class="app--icon">
+            <img src="" alt="">
+        </div>
+        <div class="app--message">
+            <svg width="40px" height="48px" viewBox="0 0 40 48">
+                <g id="brav-ux-flag" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path d="M4.638,5.793 L20.529,5.793 L25.065,21.849 L9.178,21.849 L4.638,5.793 L4.638,5.793 Z M40,11.28 L25.077,11.274 L25.895,14.171 L36.183,14.175 L33.917,22.2 L36.183,30.223 L20.862,30.223 L19.316,24.746 L28.88,24.746 L22.711,2.897 L3.817,2.897 L3,0 L0,0 L13.384,47.333 L16.382,47.333 L9.995,24.746 L16.318,24.746 L18.683,33.119 L40,33.119 L36.915,22.2 L40,11.28 L40,11.28 Z" id="Imported-Layers" fill="#37474F" sketch:type="MSShapeGroup"></path>
+                </g>
+            </svg>
+            Do NOT bookmark this page.
+        </div>
+
+        <div class="app--login">
+            <h2>Sign Up</h2>
+            
+            <div class="brave-ux--input-group">
+                <label for="username">Username</label>
+                <input id="username" type="text" />
+            </div>
+
+            <div class="brave-ux--input-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" />
+                <span class="eye--icon">
+                    <svg width="23px" height="16px" viewBox="0 0 23 16">
+                        <g id="brave-ux-eye" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                            <g id="Imported-Layers" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)" fill="#B0BEC5">
+                                <path d="M10.59,-0.394 C5.59,-0.394 1.32,2.716 -0.41,7.106 C1.32,11.497 5.59,14.606 10.59,14.606 C15.59,14.606 19.859,11.497 21.59,7.106 C19.859,2.716 15.59,-0.394 10.59,-0.394 L10.59,-0.394 Z M10.59,12.106 C7.83,12.106 5.59,9.866 5.59,7.106 C5.59,4.347 7.83,2.106 10.59,2.106 C13.35,2.106 15.59,4.347 15.59,7.106 C15.59,9.866 13.35,12.106 10.59,12.106 L10.59,12.106 Z" id="Fill-1" sketch:type="MSShapeGroup"></path>
+                                <path d="M10.59,4.501 C9.148,4.501 7.984,5.665 7.984,7.106 C7.984,8.548 9.148,9.712 10.59,9.712 C12.031,9.712 13.195,8.548 13.195,7.106 C13.195,5.665 12.031,4.501 10.59,4.501" id="Fill-2" sketch:type="MSShapeGroup"></path>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+            </div>
+
+            <button class="brave-ux--button">
+                Sign Up
+            </button>
+
+            <a class="brave-ux--help" href="#">Need Help?</a>
+        </div>
+
+
+        <footer class="app--footer">
+            <p>Powered by Brave UX</p>
+        </footer>
+      </main>
+
+
+       <!-- build:js scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
