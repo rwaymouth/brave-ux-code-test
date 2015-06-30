@@ -191,7 +191,7 @@ input[type="password"] {
     }
    
     input {
-        min-width: 80%;
+        width: 80%;
     } 
     
     > * {
@@ -224,7 +224,7 @@ input[type="password"] {
     border-radius: 0.175em;
     transition: 0.3s;
     width: 33%;
-    min-width: 6.25em;
+    min-width: 7.25em;
     cursor: pointer;
 
     &:hover,
