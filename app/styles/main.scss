@@ -38,6 +38,12 @@ header {
     height: $menu-height;
     padding: 0 $padding; 
     color: $header-title-color;
+    display: table;
+
+    > * {
+        display: table-cell;
+        vertical-align: middle;
+    }
 }
     
 .nav--title {
@@ -53,12 +59,60 @@ footer {
 
 .app--nav {
     background-color: $menu-bg;
-    width: 33%;
-    height: 100%;
+    width: 31.25%;
+    position: relative;
+    padding: 0 $padding;
+    transition: width 0.3s ease-in-out;
+
+    &.active {
+        width: 50%;
+    }
 }
 
-.app--nav ul {
-    display: none;
+.nav--toggle {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background: orange;
+    top: 0;
+    bottom: 0;
+    right: 2 * $padding;
+    margin: auto;
+}
+
+.nav--main {
+   position: absolute;
+   left:0;
+   right: 0;
+   height: 100vh;
+   background-color: $menu-bg;
+   padding-left: 0;
+   transform: translateX(100%);
+   transition: 0.7s ease-in-out;
+
+   .active & {
+       transform: none;
+   }
+}
+
+.nav--entry {
+    list-style: none;
+    color: $header-title-color;
+    width: 100%;
+    padding: $padding/2 $padding;
+
+    > * + .nav--entry--group {
+        padding: $padding;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.nav--entry__group {
+    background-color: darken($menu-bg, 15%);
 }
 
 .braveux--app {

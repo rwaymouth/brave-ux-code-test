@@ -12,6 +12,11 @@ function togglePassword(target) {
    input.attributes.type.nodeValue = type;
 }
 
+function toggleMenu(target) {
+    var target = document.querySelector(target);
+    target.classList.toggle('active');
+}
+
 function validateUserName(entry) {
     
 }
@@ -20,10 +25,12 @@ function validatePassword(entry) {
 
 }
 
-var toggle = document.querySelector('.eye--icon');
+var pwToggle = document.querySelector('.eye--icon');
+var menuToggle = document.querySelector('.nav--toggle');
 
 window.onload = function() {
-    toggle.addEventListener('click', function(){togglePassword('#password')}, false);
+    pwToggle.addEventListener('click', function(){togglePassword('#password')}, false);
+    menuToggle.addEventListener('click', function(){toggleMenu('.app--nav')}, false);
 }
 
 
