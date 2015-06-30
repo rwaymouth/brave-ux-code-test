@@ -1,0 +1,68 @@
+// Fonts
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300);
+$primary-font: 'Roboto Condensed', 'sans-serif';
+
+// Color Vars
+$body-bg: #AFBDC4;
+$app-bg: #EBEEF0;
+$menu-bg: #662D91;
+$header-bg: #93278F;
+$header-title-color: #F9F9F9; 
+
+// Spacing Variables
+$padding: 1.5625em;
+$menu-height: 3.125em;
+
+@mixin clearfix {
+    &:after {
+        content:"";
+        display:table;
+        clear:both;
+    }
+}
+
+body {
+    background-color: $body-bg;
+    font-family: $primary-font;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: $header-bg;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $menu-height;
+    padding: 0 $padding; 
+    color: $header-title-color;
+}
+    
+.nav--title {
+    font-size: 13.86pt;
+    font-weight: 300;
+    margin: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+.app--nav {
+    background-color: $menu-bg;
+    width: 33%;
+    height: 100%;
+}
+
+.app--nav ul {
+    display: none;
+}
+
+.braveux--app {
+    margin-top: $menu-height;
+    background-color: $app-bg;
+    padding: $padding;
+}
