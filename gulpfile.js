@@ -16,7 +16,7 @@ gulp.task('styles', function () {
       onError: console.error.bind(console, 'Sass error:')
     }))
     .pipe($.postcss([
-      require('autoprefixer-core')({browsers: ['last 1 version']})
+      require('autoprefixer-core')({browsers: ['ie 9', 'last 2 version']})
     ]))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
@@ -117,10 +117,22 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () {
+gulp.task('build', ['html', 'images', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
 gulp.task('default', ['clean'], function () {
   gulp.start('build');
+});
+
+gulp.task('brave-ux', function(){
+ console.log('Hi Brave UX people!');
+ browserSync({
+    notify: false,
+    port: 9000,
+    server: {
+      baseDir: ['dist'],
+    }
+  });
+   
 });
