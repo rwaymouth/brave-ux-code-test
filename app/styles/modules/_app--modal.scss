@@ -1,0 +1,24 @@
+.app--modal {
+    position: fixed;
+    z-index: 50;
+    top: $menu-height;
+    left: 0;
+    width: 100%;
+    padding: 0 $padding;
+    color: $header-title-color;
+    transition: top 0.7s ease-in-out;
+    box-shadow: 0 0.1em 0.2em rgba(black, 0.3);
+
+    &.hidden {
+        top: 0;
+        box-shadow: none;
+    }
+
+    &.error {
+        background-color: $error;
+    }
+
+    &.success {
+        background-color: green;
+    }
+}

@@ -1,0 +1,58 @@
+// Base Styles, and layout
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $body-bg;
+    font-family: $primary-font;
+    font-size: 16px;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header {
+    background-color: $header-bg;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $menu-height;
+    padding-left: $padding;
+    color: $header-title-color;
+    display: table;
+
+    > * {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+.braveux--app {
+    margin-top: $menu-height;
+    background-color: $app-bg;
+    padding: $padding $padding $menu-height $padding;
+    width: 100%;
+    display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+    outline: none;
+    border: none;
+    background: none;
+    width: auto;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+}

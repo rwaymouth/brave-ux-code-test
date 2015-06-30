@@ -1,0 +1,78 @@
+.app--input-group {
+    background-color: white;
+    border-radius: 0.175em;
+    padding: $padding/3 $padding/2;
+    display: table;
+    width: 100%;
+
+    &.error {
+        border: 0.125em solid $error;
+    }
+
+    label {
+        width: 3.375em;
+        color: $input-text;
+        padding-right: $padding;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    > * {
+        display: table-cell;
+    }
+
+    & + & {
+        margin-top: $padding/2;
+    }
+}
+
+.eye--icon {
+    width: 1.5em;
+    cursor: pointer;
+}
+
+.app--row {
+    display: table;
+    width: 100%;
+    margin-top: $padding;
+
+    > * {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.brave-ux--button {
+    background-color: $menu-bg;
+    border: none;
+    padding: $padding/2 $padding;
+    color: $header-title-color;
+    font-size: 1em;
+    border-radius: 0.175em;
+    transition: 0.3s;
+    width: 33%;
+    min-width: 7.25em;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: lighten($menu-bg, 15%);
+    }
+}
+
+.brave-ux--help {
+    text-align: right;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: underline;
+        color: darken($text-color, 12.5%);
+    }
+}
