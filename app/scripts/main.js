@@ -14,7 +14,16 @@ function togglePassword(target) {
 
 function toggleMenu(target) {
     var target = document.querySelector(target);
-    target.classList.toggle('active');
+    var originalClass = target.className;
+    
+    if (originalClass.indexOf('active') > 0) {
+        var newClass = originalClass.replace('active', '');
+    } else {
+        var newClass = originalClass + ' active';
+    }
+    
+    target.className = newClass;
+
 }
 
 function validateUserName(entry) {
